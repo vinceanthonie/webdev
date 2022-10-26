@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <title>AwesomeCo Blog</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    </head>
+    <style>
+    body{
+      margin: 0;
+      background-size: 100%;
+      padding: 20px;
+      width:1000px;
+      margin:30px auto;
+      font-family: Arial, "MS Trebuchet", sans-serif;
+    }
+
+    .bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.content {
+  background-color:rgba(255,255,255,.8);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  left:50%;
+  padding:10vmin;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+h1 {
+  font-family:monospace;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+    p{
+      margin:0 0 20px 0;
+    }
+
+    p, li{
+      line-height:20px;
+    }
+
+    header#page_header{
+      width:100%;
+      height: 95px;
+    } 
+
+    #page_header > nav > ul, #page_footer > nav > ul{
+      list-style: none;
+      margin: 0; 
+      height: 30px;
+      padding: 0;
+    }
+    #page_header > nav > ul > li, #page_footer > nav > ul > li{
+      padding:0;
+      margin: 0 20px 0 0;
+      display:inline;
+    }
+
+    #posts{
+      float: left;
+      width: 74%;
+    }
+
+    #posts aside{
+      float: right;
+      width: 35%;
+      margin-left: 5%;
+      font-size: 20px;
+      line-height: 40px;
+    }
+
+    #sidebar{
+      float: left;
+      width: 25%;
+    }
+
+    #page_footer{
+      clear: both;
+      width: 100%; 
+      display: block; 
+      text-align: center;
+    }
+    #send-comment{
+      padding: 15px;
+    }
+    #animalGroup{
+      height: 98px;
+    }
+
+
+    @media only screen and (max-device-width: 480px) {
+      body{
+        width:480px;
+      }
+      
+      nav, section, header, footer{
+        margin: 0 10px 0 10px;
+      }
+      
+      #sidebar, #posts{
+        float: none;
+        width: 100%;
+      }
+    }
+  </style>
+
+
+
+  <body role="document"> 
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    
+    <header id="page_header" role="banner"> 
+      <h1>My Blog!</h1>
+      <nav role="navigation"> 
+        <ul>
+          <li><a href="#">Latest Posts</a></li>
+          <li><a href="#">Archives</a></li>
+          <li><a href="#">Contributors</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <form id="search" role="search">
+     <label for="search-input">Search this blog</label>
+     <input type="search" id="search-input" name="search" spellcheck="false">
+     <input value="Submit" type="submit">
+   </form>
+
+   <section id="posts" role="main">
+    <article class="post" role="article">
+      <header>
+        <h2>All About Myself.</h2>
+        <p>Posted by Vince on 
+          <time datetime="2022-10-24T11:11">October 24th, 2022 at 11:11AM</time>
+        </p>
+      </header>
+
+      <aside>
+        <p>
+          &ldquo;Technology is best when it brings people together.&rdquo;
+        </p>
+      </aside>
+      <p>
+        Hello! I'm Vince Anthonie L. Genobaña, 19 years of age, 2nd Year College at Cebu Technological University-Naga Extension Campus. My hobbies are playing mobile games and learning new things about technology. 
+      </p>
+     <!--NOTE-->
+     <p role="note" class="hilitebox">
+        My short-term goals are to achieve excellence in the skills I'm mastering, and climb the ladder of success. Even when everything is perfect, you can always make it better. Break barriers in your head, create something crazy, and don't forget, nothing is impossible.
+    </p>
+
+    <div role="math" aria-label="a^{2} + b^{2} = c^{2}">
+      a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup>
+    </div>
+
+    <div role=”application”>
+<h1>Calculator</h1>
+<input id=”num1″ type=”text”> + <input id=”num2″ type=”text”> =
+<span id=”result”></span>
+</div>
+
+  </article>
+  <div id="tree1" role="tree" tabindex="-1">
+   <div
+   id="animals"
+   class="groupHeader"
+   role="presentation"
+   aria-owns="animalGroup"
+   aria-expanded="true">
+   <img role="presentation" tabindex="-1" />
+   <span role="treeitem" tabindex="0">Animals</span>
+ </div>
+ <div id="animalGroup" role="group">
+   <div id="birds" role="treeitem">
+     <span tabindex="-1">Birds</span>
+   </div>
+   <div
+   id="cats"
+   class="groupHeader"
+   role="presentation"
+   aria-owns="catGroup"
+   aria-expanded="false">
+   <img role="presentation" tabindex="-1" />
+   <span role="treeitem" tabindex="0">Cats</span>
+ </div>
+ <div id="catGroup" role="group">
+   <div id="siamese" role="treeitem">
+     <span tabindex="-1">Siamese</span>
+   </div>
+   <div id="tabby" role="treeitem">
+     <span tabindex="-1">Tabby</span>
+   </div>
+ </div>
+</div>
+</div>
+<footer>
+
+  <div class="more-pens">
+    <a target="_blank" href="https://codepen.io/plasm/pen/OpZQdB" class="white-mode">  
+
+  <p><a href="comments"><i>100 Comments</i></a> ...</p>
+</footer>
+
+</section>
+<section id="sidebar" role="complementary" role="list">
+
+  <nav>
+    <h3>Archives</h3>
+
+    <ul role="presentation">
+      <ul>
+        <li><a href="2021/12">December 2021</a></li>
+        <li><a href="2022/01">January 2022</a></li>
+        <li><a href="2022/02">Febuary 2022</a></li>
+        <li><a href="2022/03">March 2022</a></li>
+        <li><a href="2022/04">April 2022</a></li>
+        <li><a href="2022/05">May 2022</a></li>
+        <li><a href="2022/06">June 2022</a></li>
+        <li><a href="2022/07">July 2022</a></li>
+        <li><a href="2022/08">August 2022</a></li>
+        <li><a href="2022/09">September 2022</a></li>
+        <li><a href="all">More</a></li>
+      </ul>
+    </nav>
+  </section> <!-- sidebar -->
+  <div
+  role="table"
+  aria-label="Populations"
+  aria-describedby="country_population_desc">
+  <div id="country_population_desc">World Populations by Country</div>
+  <div role="rowgroup">
+   <div role="row">
+     <span role="columnheader" aria-sort="descending">Country</span>
+     <span role="columnheader" aria-sort="none">Population</span>
+   </div>
+ </div>
+ <div role="rowgroup">
+   <div role="row">
+     <span role="rowheader">Finland</span>
+     <span role="cell">5.5 million</span>
+   </div>
+   <div role="row">
+     <span role="rowheader">France</span>
+     <span role="cell">67 million</span>
+   </div>
+ </div>
+</div>
+
+
+
+<footer id="page_footer" role="contentinfo">
+  <p>Copyright © 2022 Vince.</p>
+  <nav>
+    <ul>   
+     <li><a href="#">Home</a></li>
+     <li><a href="#">About</a></li>
+     <li><a href="#">Terms of Service</a></li>
+     <li><a href="#">Privacy</a></li>
+   </ul>
+ </nav>
+</footer> <!-- footer -->
+
+<div role="form" id="send-comment" aria-label="Add a comment">
+
+ <label for="email">Email</label>
+ <input
+ id="email"
+ name="email"
+ autocomplete="email" 
+ autocapitalize="off"
+ autocorrect="off"
+ spellcheck="false"
+ type="text" />
+
+ <label for="comment">Comment</label>
+ <textarea id="comment" name="comment"></textarea>
+
+ <input value="Comment" type="submit" />
+</div>
+
+</body>
+</html>
